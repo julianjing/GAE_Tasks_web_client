@@ -1,0 +1,23 @@
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+<body>
+	<h2>Tasks <a href="/">back to tasklists</a></h2>
+	<form action="/lists/{{tasklist_id}}/tasks" method="post">
+		<div>
+			<textarea name="title" rows="3" cols="60"></textarea>
+		</div>
+		<div>
+			<input type="submit" value="Add task">
+		</div>
+	</form>
+	<ul>
+		{% if tasks %}
+			{% for task in tasks %}
+			<li>{{task.title}}</li> 
+			{% endfor %}
+		{% endif %}
+	</ul>
+</body>
+</html>
